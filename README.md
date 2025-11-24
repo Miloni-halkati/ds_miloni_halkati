@@ -36,123 +36,121 @@ ds_miloni_halkati/
 │
 ├── ds_report.pdf                     # Final report containing visuals & insights
 └── README.md                         # Project documentation
-⚙️ 3. Methodology Summary
-3.1 Data Collection & Understanding
-Loaded Hyperliquid trader dataset with execution-level trade records
 
-Loaded Fear & Greed sentiment dataset
+---
 
-Performed schema validation and inspected structure
+---
 
-3.2 Data Cleaning (Notebook 1)
-Standardized all column names to snake_case
+## ⚙️ 3. Methodology Summary
 
-Converted UNIX timestamps to human-readable datetime formats
+### **3.1 Data Collection & Understanding**
+- Loaded Hyperliquid trade-level dataset  
+- Loaded Bitcoin Fear & Greed Index dataset  
+- Explored schema, data types, and structural quality  
 
-Added date_only column to enable merging
+---
 
-Cleaned formatting issues (e.g., exponential notation, strings, missing values)
+### **3.2 Data Cleaning & Preprocessing (Notebook 1)**
 
-Verified numeric columns:
+Key steps included:
 
-execution_price
+- Standardizing column names  
+- Converting UNIX timestamps to human-readable datetime formats  
+- Creating `date_only` for merging datasets  
+- Fixing numeric formatting issues  
+- Validating numeric fields (`execution_price`, `size_usd`, `size_tokens`, `closed_pnl`)  
+- Removing irrelevant characters and inconsistencies  
 
-size_usd
+---
 
-size_tokens
+### **3.3 Sentiment Engineering**
+- Mapped original sentiment classifications to:
+  - **Fear**  
+  - **Neutral**  
+  - **Greed**  
+- Merged sentiment dataset into trade dataset using `date_only`  
+- Exported the combined dataset → `trader_with_sentiment.csv`  
 
-closed_pnl
+---
 
-3.3 Sentiment Engineering
-Simplified granular sentiment labels into:
+### **3.4 Exploratory Data Analysis (Notebook 2)**
+Computed grouped sentiment-level metrics:
 
-Fear
+- **Average PnL per trade**  
+- **Median PnL**  
+- **Total PnL**  
+- **Total traded USD volume**  
+- **Average starting position size**  
+- **Number of trades**  
 
-Neutral
+Generated sentiment-wise charts and behavioral patterns.
 
-Greed
+---
 
-Merged sentiment data with trade data using date_only
+## 📊 4. Key Insights
 
-3.4 Exploratory Data Analysis (Notebook 2)
-Computed grouped metrics for each sentiment class:
+### **4.1 Increased Volume During Greed**
+Trades are larger and more frequent under positive sentiment, indicating higher risk appetite.
 
-Average PnL
+### **4.2 Position Sizes Expand as Sentiment Improves**
+Greed sentiment correlates with significantly larger starting positions.
 
-Median PnL
+### **4.3 Fear Promotes Conservative Behavior**
+Lower volume, smaller positions, and reduced activity highlight cautious trading patterns.
 
-Total PnL
+### **4.4 Sentiment-Linked Behavioral Shifts**
+Trader behavior varies meaningfully across sentiment regimes—useful for strategy tuning and risk modeling.
 
-Total Trading Volume (USD)
+---
 
-Average Starting Position Size
+## 📈 5. Visual Outputs
 
-Trade Count
+All generated charts are available in the `outputs/` directory:
 
-Created visualizations to highlight differences across sentiments.
+- `volume_sentiment.png` — Total volume vs sentiment  
+- `avg_pnl_sentiment.png` — Average PnL vs sentiment  
+- `avg_position_sentiment.png` — Avg position size vs sentiment  
 
-📊 4. Key Insights
-4.1 Trading Volume Trends
-Trading volume is significantly higher during Greed periods
+---
 
-Indicates stronger activity and confidence when sentiment is positive
+## 🧪 6. Reproducibility
 
-4.2 Profitability Patterns
-Average and median PnL metrics vary across sentiments
+To reproduce analysis:
 
-Greed shows higher volatility in outcomes
+1. Open `notebook_1.ipynb` in Google Colab  
+2. Mount Google Drive and run all cells  
+3. Open `notebook_2.ipynb` and run all cells  
+4. Charts will be saved automatically inside `outputs/`  
+5. Final results are presented in `ds_report.pdf`  
 
-Fear tends to produce more stable but lower-return behavior
+---
 
-4.3 Position Size Behavior
-Position sizes increase during Greed
+## 📑 7. Deliverables Included
 
-Suggests higher risk appetite and aggressive strategy deployment
+- ✔ Cleaned + merged dataset  
+- ✔ Two Google Colab notebooks  
+- ✔ Visual charts  
+- ✔ Comprehensive PDF report  
+- ✔ Professional README.md  
 
-4.4 Risk & Behavior Dynamics
-Fear periods → conservative behavior
+---
 
-Greed periods → more aggressive, larger trades
+## 🏁 8. Conclusion
 
-Neutral → baseline steady behavior
+This analysis demonstrates clear behavioral differences among traders across varying sentiment states.  
+Incorporating sentiment as a feature can help improve:
 
-📈 5. Visual Outputs (from outputs/ folder)
-Included visualizations:
+- Strategy timing  
+- Position sizing models  
+- Risk exposure frameworks  
+- Predictive behavior modeling  
 
-volume_sentiment.png
-avg_pnl_sentiment.png
-avg_position_sentiment.png
+---
 
-Each chart illustrates differences in trader behavior across sentiment regimes.
+## 👤 9. Candidate Information
 
-🧪 6. How to Reproduce
-Open notebook_1.ipynb in Google Colab
+**Name:** Miloni Halkati  
+**Role:** Applicant – Junior Data Scientist (Trader Behavior Insights)  
+**Tools:** Python, Pandas, NumPy, Matplotlib, Google Colab  
+**Date:** 24-11-2025
 
-Mount Google Drive
-
-Run all cells to generate:
-
-Copy code
-trader_with_sentiment.csv
-Open notebook_2.ipynb
-
-Run all cells to generate visual outputs in outputs/
-
-Refer to ds_report.pdf for the full written analysis
-
-📑 7. Deliverables Included
-✔ Final merged dataset
-✔ Two Colab notebooks
-✔ Visual output images
-✔ Polished PDF report
-✔ Professional README
-
-🏁 8. Conclusion
-This project demonstrates the strong correlation between market sentiment and trader behavior, highlighting how sentiment shifts influence volume, position sizing, and profitability.
-The insights can directly support sentiment-aware trading strategies, risk adjustment, and performance optimization within Web3 trading environments.
-
-👤 9. Candidate Information
-Name: Miloni Halkati
-Position: Applicant — Junior Data Scientist (Trader Behavior Insights)
-Tools Used: Python, Pandas, NumPy, Matplotlib, Google Colab
-Date: 24-11-2025
