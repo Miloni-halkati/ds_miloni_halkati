@@ -45,25 +45,25 @@ All work was completed in **Google Colab**, as required.
 
 The repository strictly follows the required format:
 
+```
 ds_miloni_halkati/
 │
 ├── notebook_1.ipynb
 ├── notebook_2.ipynb
 │
 ├── csv_files/
-│ ├── fear_greed_index.csv
-│ ├── historical_data.csv
-│ └── trader_with_sentiment.csv
+│   ├── fear_greed_index.csv
+│   ├── historical_data.csv
+│   └── trader_with_sentiment.csv
 │
 ├── outputs/
-│ ├── volume_sentiment.png
-│ ├── avg_pnl_sentiment.png
-│ └── avg_position_sentiment.png
+│   ├── volume_sentiment.png
+│   ├── avg_pnl_sentiment.png
+│   └── avg_position_sentiment.png
 │
 ├── ds_report.pdf
 └── README.md
-
-
+```
 ---
 
 # 🧠 Methodology
