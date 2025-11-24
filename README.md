@@ -6,38 +6,41 @@
 
 ## 🔍 1. Project Overview
 
-This project aims to analyze how **trader behavior** changes across different **market sentiment regimes** (Fear, Neutral, Greed) by combining:
+This repository contains my submission for the **Trader Behavior Insights** Data Science assignment.
 
-- **Hyperliquid Historical Trader Data**
-- **Bitcoin Fear & Greed Index**
+The objective is to analyze how **trading performance**, **risk exposure**, and **volume behavior** evolve across different **market sentiment regimes** — Fear, Neutral, and Greed — by combining:
 
-The analysis explores how profitability, volume, starting positions, and risk-taking vary with sentiment.  
-All work was performed in **Google Colab**, adhering to the exact folder structure required.
+- Hyperliquid Historical Trader Data  
+- Bitcoin Fear & Greed Index  
+
+All development was completed in **Google Colab**, following the required submission structure.
 
 ---
 
 ## 📂 2. Repository Structure
 
-```text
+The repository strictly follows the required format:
+
 ds_miloni_halkati/
 │
-├── notebook_1.ipynb                # Data cleaning, preprocessing, timestamp parsing, merging
-├── notebook_2.ipynb                # Exploratory analysis, aggregations, visualizations, insights
+├── notebook_1.ipynb # Data cleaning, preprocessing, timestamp parsing, merging
+├── notebook_2.ipynb # EDA, grouped metrics, visualizations, insights
 │
 ├── csv_files/
-│   ├── fear_greed_index.csv
-│   ├── historical_data.csv
-│   └── trader_with_sentiment.csv     # Final merged dataset from Notebook 1
+│ ├── fear_greed_index.csv
+│ ├── historical_data.csv
+│ └── trader_with_sentiment.csv # Final merged dataset produced in Notebook 1
 │
 ├── outputs/
-│   ├── volume_sentiment.png          # Total volume vs sentiment
-│   ├── avg_pnl_sentiment.png         # Average PnL vs sentiment
-│   └── avg_position_sentiment.png    # Avg position size vs sentiment
+│ ├── volume_sentiment.png # Total volume vs sentiment
+│ ├── avg_pnl_sentiment.png # Average PnL vs sentiment
+│ └── avg_position_sentiment.png # Avg position size vs sentiment
 │
-├── ds_report.pdf                     # Final report containing visuals & insights
-└── README.md                         # Project documentation
+├── ds_report.pdf # Final full report with charts & analysis
+└── README.md # Project documentation
 
----
+yaml
+Copy code
 
 ---
 
@@ -153,4 +156,3 @@ Incorporating sentiment as a feature can help improve:
 **Role:** Applicant – Junior Data Scientist (Trader Behavior Insights)  
 **Tools:** Python, Pandas, NumPy, Matplotlib, Google Colab  
 **Date:** 24-11-2025
-
