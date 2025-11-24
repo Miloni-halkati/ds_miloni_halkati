@@ -41,26 +41,27 @@ Sentiment is derived from the **Fear–Greed Index**, while behavioural metrics 
 All work was completed in **Google Colab**, as required.
 
 ---
+## 📂 Repository Structure
 
-# 📂 Repository Structure
+The repository strictly follows the required format:
 
 ds_miloni_halkati/
 │
-├── notebook_1.ipynb # Data cleaning, preprocessing, timestamp parsing, merging
-├── notebook_2.ipynb # EDA, aggregations, visualizations, insights
+├── notebook_1.ipynb
+├── notebook_2.ipynb
 │
 ├── csv_files/
 │ ├── fear_greed_index.csv
 │ ├── historical_data.csv
-│ └── trader_with_sentiment.csv # Final merged dataset from Notebook 1
+│ └── trader_with_sentiment.csv
 │
 ├── outputs/
-│ ├── volume_sentiment.png # Total volume vs sentiment
-│ ├── avg_pnl_sentiment.png # Average PnL vs sentiment
-│ └── avg_position_sentiment.png # Avg position size vs sentiment
+│ ├── volume_sentiment.png
+│ ├── avg_pnl_sentiment.png
+│ └── avg_position_sentiment.png
 │
-├── ds_report.pdf # Final written analysis with charts
-└── README.md # This documentation
+├── ds_report.pdf
+└── README.md
 
 
 ---
