@@ -1,61 +1,61 @@
-Project Title: Trader Behavior vs Market Sentiment — Data Science Analysis
+Trader Behavior vs Market Sentiment — Data Science Assignment
+
 Candidate: Miloni Halkati
+Role: Junior Data Scientist – Trader Behavior Insights
 
-🔍 1. Project Overview
+📘 Project Overview
 
-This project investigates how trader behavior correlates with overall market sentiment using two primary datasets:
+This project analyzes the relationship between trader behavior and Bitcoin market sentiment using two datasets:
 
 Bitcoin Fear & Greed Index
 
 Hyperliquid Historical Trader Data
 
-The analysis explores whether trader performance (PnL), risk-taking behavior (position size), and activity levels (volume) vary across different sentiment regimes — Fear, Neutral, and Greed.
+The goal is to understand how trading activity (PnL, position size, volume) changes across sentiment regimes — Fear, Neutral, and Greed — and derive insights that can support smarter trading strategies for Web3-native teams.
 
-This assignment fulfills the requirements for the Junior Data Scientist – Trader Behavior Insights role and demonstrates skills in data wrangling, EDA, visualization, and insight generation.
+This repository contains all required deliverables as per the assignment instructions, executed fully in Google Colab.
 
-🗂 2. Repository Structure
-
-The submission follows the required standardized format:
-
+📁 Repository Structure
 ds_miloni_halkati/
 │
-├── notebook_1.ipynb              # Data loading, cleaning, preprocessing, merging
-├── notebook_2.ipynb              # Analysis, visualizations, insights
+├── notebook_1.ipynb              # Data loading, cleaning, timestamp parsing, sentiment merge
+├── notebook_2.ipynb              # Exploratory analysis, aggregations, visualizations, insights
 │
 ├── csv_files/
 │   ├── fear_greed_index.csv
 │   ├── historical_data.csv
-│   └── trader_with_sentiment.csv # Cleaned merged dataset generated in Notebook 1
+│   └── trader_with_sentiment.csv  # Final merged dataset
 │
 ├── outputs/
-│   ├── volume_sentiment.png      # Total volume by sentiment
-│   ├── avg_pnl_sentiment.png     # Average PnL by sentiment
-│   ├── avg_position_sentiment.png# Avg starting position by sentiment
+│   ├── volume_sentiment.png       # Volume vs sentiment
+│   ├── avg_pnl_sentiment.png      # PnL vs sentiment
+│   └── avg_position_sentiment.png # Position size vs sentiment
 │
-├── ds_report.pdf                 # Final professional report with insights
-└── README.md                     # Project documentation (this file)
+├── ds_report.pdf                  # Final report with analysis, charts, and findings
+└── README.md                      # Project documentation
 
+⚙️ Methodology Summary
+1. Data Preprocessing (Notebook 1)
 
-All code was executed and tested in Google Colab, following the instructions.
+Cleaned and standardized column names
 
-🧪 3. Methodology Summary
-Data Preparation (Notebook 1)
+Parsed UNIX and IST timestamps
 
-Standardized all column names
+Created date_only field for joining datasets
 
-Parsed UNIX timestamps and human-readable timestamps
+Simplified sentiment classes:
 
-Extracted date_only field for merging
+Extreme Fear → Fear
 
-Simplified sentiment categories (Extreme Fear → Fear, Extreme Greed → Greed)
+Extreme Greed → Greed
 
-Merged sentiment data with trader data
+Merged sentiment data into trader dataset
 
-Exported the final combined dataset
+Exported final trader_with_sentiment.csv
 
-Analysis (Notebook 2)
+2. Analysis & Visualization (Notebook 2)
 
-Computed the following metrics grouped by sentiment:
+Performed grouped analysis on:
 
 Average PnL
 
@@ -65,66 +65,58 @@ Total PnL
 
 Total Trading Volume (USD)
 
-Average Start Position Size
+Average Starting Position Size
 
-Number of Trades
+Trade Count
 
-Visualizations were created to highlight trends clearly.
+Generated clear visualizations to highlight sentiment-driven behavior patterns.
 
-📊 4. Key Insights
+📊 Key Insights
 1️⃣ Trading Volume Rises During Greed
 
-Traders become more active when sentiment turns positive, indicating higher confidence and risk appetite.
+Market optimism leads to higher participation and larger order flow.
 
-2️⃣ Average PnL Varies by Sentiment
+2️⃣ Position Sizes Increase in Greed
 
-Patterns suggest that trader performance shifts noticeably across Fear, Neutral, and Greed regimes.
+Traders take more aggressive positions in bullish sentiment environments.
 
-3️⃣ Position Sizes Increase in Greed
+3️⃣ Fear Leads to Conservative Behavior
 
-Traders take larger positions when market sentiment is optimistic, potentially exposing themselves to higher risk.
+Lower volume, smaller positions, and steady PnL characteristics appear during Fear periods.
 
-4️⃣ Fear Periods Show More Controlled Behavior
+4️⃣ Sentiment Can Guide Risk Management
 
-Lower volume and smaller position sizes indicate cautious trading during negative sentiment.
+Behaviors vary meaningfully across sentiment regimes, indicating potential for sentiment-integrated trading models.
 
-These signals can help inform position sizing rules, risk thresholds, and sentiment-aware strategy adjustments.
-
-📈 5. Visualizations Included
-
-All visual outputs are available in the outputs/ directory:
-
-volume_sentiment.png — Total trading volume by sentiment
-
-avg_pnl_sentiment.png — Average PnL per trade by sentiment
-
-avg_position_sentiment.png — Average starting position size by sentiment
-
-📑 6. Report
-
-A comprehensive, well-structured written report consolidating all methodology, findings, charts, and strategic insights is included:
-
-ds_report.pdf
-
-🛠 7. How to Reproduce the Analysis
+🧪 How to Run the Project
 
 Open notebook_1.ipynb in Google Colab
 
 Mount Google Drive
 
-Run all cells to generate trader_with_sentiment.csv
+Run all cells to generate the merged dataset
 
 Open notebook_2.ipynb
 
-Run all cells to produce charts in the outputs/ folder
+Run all cells to reproduce charts in the outputs/ folder
 
-Refer to ds_report.pdf for consolidated insights
+Refer to ds_report.pdf for the complete analysis
 
-✉️ 8. Candidate Information
+📑 Deliverables Included
 
-Prepared by:
-Miloni Halkati
+✔ Cleaned and merged dataset
 
-Role: Junior Data Scientist — Trader Behavior Insights
+✔ Two well-structured analysis notebooks
+
+✔ Visual outputs
+
+✔ Final detailed PDF report
+
+✔ Professional README documentation
+
+✉️ Candidate Information
+
+Name: Miloni Halkati
+Role Applied: Junior Data Scientist – Trader Behavior Insights
 Tools Used: Python, Pandas, Matplotlib, Google Colab
 Date: 24-11-2025
