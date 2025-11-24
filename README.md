@@ -1,174 +1,157 @@
-<img src="https://cdn-icons-png.flaticon.com/512/993/993928.png" width="28"/> Trader Behavior vs Market Sentiment — Data Science Assignment
-👩‍💻 Candidate: Miloni Halkati
-📌 Role Applied: Junior Data Scientist – Trader Behavior Insights
-📅 Date: 24-11-2025
-🔖 Badges
-<p> <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python"/> <img src="https://img.shields.io/badge/Google%20Colab-Executed-yellow?style=for-the-badge&logo=googlecolab"/> <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge"/> <img src="https://img.shields.io/badge/Report-PDF-red?style=for-the-badge&logo=adobeacrobatreader"/> </p>
-<img src="https://cdn-icons-png.flaticon.com/512/9906/9906629.png" width="26"/> Overview
+# 🚀 Trader Behavior vs Market Sentiment Analysis  
+### *Data Science Assignment – Web3 Trading Team*  
+**Author:** *Miloni Halkati*
 
-This project investigates how trading behavior—including PnL, position sizing, and volume exposure—varies under different market sentiment regimes:
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
+![Colab](https://img.shields.io/badge/Platform-Google%20Colab-F9AB00?logo=google-colab)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Data](https://img.shields.io/badge/Data-Crypto%20Trading%20%2F%20Sentiment-yellow)
 
-😨 Fear
+A complete analytical project exploring the relationship between **trading behaviour** and **market sentiment** (Fear, Neutral, Greed).  
+This study combines **Hyperliquid Trader Data** with the **Bitcoin Fear & Greed Index** to uncover key behavioural and performance patterns.
 
-😐 Neutral
+---
 
-😁 Greed
+# 📑 Table of Contents
 
-Data sources used:
+- [✨ Overview](#-overview)
+- [📂 Repository Structure](#-repository-structure)
+- [🧠 Methodology](#-methodology)
+- [📊 Key Insights](#-key-insights)
+- [📈 Visual Outputs](#-visual-outputs)
+- [🧪 How to Reproduce](#-how-to-reproduce)
+- [📄 Deliverables](#-deliverables)
+- [🏁 Conclusion](#-conclusion)
+- [👩‍💻 Author](#-author)
 
-📊 Hyperliquid Historical Trader Data
-📈 Bitcoin Fear & Greed Index
+---
 
-The workflow was built entirely in Google Colab, with a clean, modular analysis pipeline.
+# ✨ Overview
 
-<img src="https://cdn-icons-png.flaticon.com/512/833/833524.png" width="26"/> Repository Structure
+This assignment examines how **traders behave under different market sentiment conditions** by analysing:
+
+- Profitability (PnL)  
+- Position sizing  
+- Trading volume  
+- Activity frequency  
+- Risk-taking patterns  
+
+Sentiment is derived from the **Fear–Greed Index**, while behavioural metrics come from **Hyperliquid's historical trading data**.
+
+All work was completed in **Google Colab**, as required.
+
+---
+
+# 📂 Repository Structure
+
 ds_miloni_halkati/
 │
-├── notebook_1.ipynb               # Cleaning, preprocessing, merging
-├── notebook_2.ipynb               # EDA, grouped metrics, graphs
+├── notebook_1.ipynb # Data cleaning, preprocessing, timestamp parsing, merging
+├── notebook_2.ipynb # EDA, aggregations, visualizations, insights
 │
 ├── csv_files/
-│   ├── fear_greed_index.csv
-│   ├── historical_data.csv
-│   └── trader_with_sentiment.csv   # Final merged dataset
+│ ├── fear_greed_index.csv
+│ ├── historical_data.csv
+│ └── trader_with_sentiment.csv # Final merged dataset from Notebook 1
 │
 ├── outputs/
-│   ├── volume_sentiment.png
-│   ├── avg_pnl_sentiment.png
-│   └── avg_position_sentiment.png
+│ ├── volume_sentiment.png # Total volume vs sentiment
+│ ├── avg_pnl_sentiment.png # Average PnL vs sentiment
+│ └── avg_position_sentiment.png # Avg position size vs sentiment
 │
-├── ds_report.pdf                   # Final report
-└── README.md                       # Documentation
+├── ds_report.pdf # Final written analysis with charts
+└── README.md # This documentation
 
-<img src="https://cdn-icons-png.flaticon.com/512/680/680345.png" width="26"/> Methodology
-1️⃣ Data Understanding
 
-Loaded both datasets into Colab
+---
 
-Explored schema, quality, and anomalies
+# 🧠 Methodology
 
-Identified formatting issues and timestamp inconsistencies
+### 🔹 1. Data Preparation (Notebook 1)
+- Loaded and validated both datasets  
+- Cleaned inconsistent formatting  
+- Converted UNIX timestamps  
+- Created `date_only` column  
+- Normalised sentiment labels (Fear / Neutral / Greed)  
+- Merged sentiment with trader data  
+- Exported final dataset  
 
-2️⃣ Data Cleaning & Preprocessing
+### 🔹 2. Exploratory Data Analysis (Notebook 2)
+- Grouped traders by sentiment  
+- Computed:
+  - Avg & median PnL  
+  - Total PnL  
+  - Total traded volume  
+  - Avg starting position  
+  - Trade counts  
+- Generated 3 main visualisations  
 
-<img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" width="20"/> Performed in: notebook_1.ipynb
+---
 
-✔ Converted UNIX timestamps → datetime
-✔ Standardized column names
-✔ Created date_only for merging
-✔ Cleaned numeric fields (execution_price, closed_pnl, etc.)
-✔ Removed invalid & malformed rows
-✔ Exported final dataset → trader_with_sentiment.csv
+# 📊 Key Insights
 
-3️⃣ Sentiment Engineering
+### 📌 **1. Greed Drives Higher Trading Activity**
+Volume spikes significantly during positive sentiment phases.
 
-Mapped sentiment scores to 3 classes: Fear, Neutral, Greed
+### 📌 **2. Position Sizes Increase During Greed**
+More confidence → more risk-taking.
 
-Joined datasets using date_only
+### 📌 **3. Fear Produces Conservative Trading**
+Lower volume, smaller positions, and stable PnL patterns.
 
-Verified merge integrity & completeness
+### 📌 **4. Sentiment Predicts Behavioural Shifts**
+Clear behavioural differences across sentiment regimes, suggesting sentiment-aware strategy potential.
 
-4️⃣ Exploratory Data Analysis
+---
 
-<img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" width="20"/> Performed in: notebook_2.ipynb
+# 📈 Visual Outputs
 
-Computed:
+Located inside the `outputs/` folder:
 
-📌 Avg & Median PnL
-📌 Total traded USD volume
-📌 Avg position size
-📌 Trade counts by sentiment
+- `volume_sentiment.png`
+- `avg_pnl_sentiment.png`
+- `avg_position_sentiment.png`
 
-Generated all plots stored in /outputs.
+These charts illustrate behavioural variation across sentiment states.
 
-<img src="https://cdn-icons-png.flaticon.com/512/2328/2328845.png" width="26"/> Key Insights
-🚀 1. Greed Drives Aggressive Trading
+---
 
-Higher trade volume
+# 🧪 How to Reproduce
 
-Larger position sizes
+### **1️⃣ Open notebook_1.ipynb**
+- Mount Google Drive  
+- Run all cells  
+- Generates `trader_with_sentiment.csv`  
 
-Increased risk exposure
+### **2️⃣ Open notebook_2.ipynb**
+- Run all cells  
+- Produces all charts in `outputs/`  
 
-😐 2. Neutral Shows Balanced Behavior
+### **3️⃣ Read the full analysis**
+- Open `ds_report.pdf`
 
-Stable and moderate risk-taking
+---
 
-Mid-range PnL and position sizes
+# 📄 Deliverables
 
-😨 3. Fear Leads to Conservative Trading
+- ✔ Cleaned & merged dataset  
+- ✔ Two well-structured Colab notebooks  
+- ✔ Output charts  
+- ✔ Complete PDF report  
+- ✔ Professional README  
 
-Fewer trades
+---
 
-Smaller positions
+# 🏁 Conclusion
 
-Restrained exposure
+The analysis shows that **market sentiment has a strong influence on trader behavior**.  
+Greed leads to aggressive trading, while Fear promotes caution.  
+These findings support the use of **sentiment signals** in trading risk models and strategy design.
 
-📌 4. Clear Sentiment-Behavior Correlation
+---
 
-Sentiment directly affects:
+# 👩‍💻 Author
 
-PnL distribution
-
-Trade size
-
-Risk-taking intensity
-
-Market participation
-
-<img src="https://cdn-icons-png.flaticon.com/512/1829/1829387.png" width="26"/> Visual Outputs
-
-All charts are located in /outputs:
-
-📊 volume_sentiment.png — Total volume by sentiment
-📈 avg_pnl_sentiment.png — Avg PnL by sentiment
-📉 avg_position_sentiment.png — Avg position size by sentiment
-
-Each visualization highlights strong behavioral changes across sentiment states.
-
-<img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" width="26"/> Reproducibility
-
-Follow these steps:
-
-Open notebook_1.ipynb
-
-Mount Google Drive
-
-Run all cells → generates cleaned dataset
-
-Open notebook_2.ipynb
-
-Run all cells → generates plots & insights
-
-View complete report in ds_report.pdf
-
-<img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" width="26"/> Deliverables
-
-✔ Cleaned + engineered dataset
-
-✔ Two Colab notebooks
-
-✔ Visual outputs
-
-✔ Final PDF report
-
-✔ Premium GitHub-style README
-
-<img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" width="26"/> Conclusion
-
-The analysis confirms that market sentiment strongly drives trader behavior.
-These insights can enhance:
-
-Risk modeling
-
-Strategy timing
-
-Position sizing models
-
-Trader behavior prediction systems
-
-<img src="https://cdn-icons-png.flaticon.com/512/64/64572.png" width="26"/> Candidate Information
-
-👤 Name: Miloni Halkati
-🧪 Tools: Python, Pandas, NumPy, Matplotlib, Google Colab
-📌 Role: Junior Data Scientist (Trader Behavior Insights)
+**Miloni Halkati**  
+Junior Data Scientist – Trader Behavior Insights  
+*Passionate about data science, crypto markets, and behavioural analytics.*
